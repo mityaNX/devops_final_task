@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Liked Cats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>Liked Cats</h1>
+
+    {% for cat in cats %}
+    <img src="{{ cat.image_url }}" alt="Cat">
+    {% endfor %}
+
+    <br>
+    <button onclick="location.href='/'">Back</button>
+
+</body>
+
+</html>

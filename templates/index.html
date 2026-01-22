@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random Cat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>Random Cat Generator</h1>
+
+    <button onclick="location.href='/random_cat'">Generate random cat</button>
+
+    {% if cat_url %}
+    <div>
+        <img src="{{ cat_url }}" alt="Cat">
+        <form action="/like" method="post">
+            <input type="hidden" name="cat_url" value="{{ cat_url }}">
+            <button type="submit">Like ❤️</button>
+        </form>
+    </div>
+    {% endif %}
+
+    <button onclick="location.href='/liked_cats'">Liked Cats</button>
+
+</body>
+
+</html>
